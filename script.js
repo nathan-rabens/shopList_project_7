@@ -1,28 +1,31 @@
+
+var newElement = document.createElement('div');
+  newElement.style.backgroundColor = 'tan';
+  newElement.style.height = '500px';
+  newElement.style.border = '10px black solid';
+  newElement.style.fontSize = '18px';
+  document.body.appendChild(newElement);
+
 var shopList = [
   {
   name: 'salad',
   price: 7,
-  //tax: 1.03,
   },
   {
   name: 'meat',
   price: 12,
-  //tax: 1.03,
   },
   {
   name: 'soda',
   price: 9,
-  //tax: 1.03
   },
   {
   name: 'mochi ice cream',
   price: 10,
-  //tax: 1.03,
   },
   {
   name: 'non-alcoholic beer',
   price: 15,
-  //tax: 1.10,
   }
 ]
 
@@ -30,18 +33,28 @@ var total = 0
 var tax = 1.10
 
 shopList.forEach(function(i) {
-   console.log(i.name + " " + i.price);
+// console.log(i.name + " " + i.price);
+  var iname = document.createElement ('p');
+  iname.innerText = i.name;
+  iname.className = "name"
+  newElement.appendChild (iname);
    total += i.price;
    console.log("Your total is" + " " + "$" + total);
 
+  var iprice = document.createElement ('p');
+  iprice.innerText = i.price;
+  iprice.className = "price";
+  newElement.appendChild (iprice);
+
 });
 
-console.log("Your after tax total is" + " " + "$" + (total * tax));
+//var finalTotal = ("Your after tax total is" + " " + "$" + (Total);
+
+var iTotal  = document.createElement ('p');
+iTotal.innerText = "Your total is    " + "$" + total;
+iTotal.className ="total";
+newElement.appendChild (iTotal);
 
 
-// trying to make different tax brackets
-//shopList.forEach(function(afterTax) {
- //var newPrice = afterTax.tax * afterTax.price;
-//  total += newPrice;
-//  console.log("After Tax total is" + " " + total);
-//});
+//var finalTotal = "Your Subtotal is" + " " + "$" + iTotal;
+//new
